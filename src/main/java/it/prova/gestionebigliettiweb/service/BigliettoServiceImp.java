@@ -45,6 +45,22 @@ public class BigliettoServiceImp implements BigliettoService {
 	@Override
 	public void update(Biglietto input) throws Exception {
 		// TODO Auto-generated method stub
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+		try {
+			entityManager.getTransaction().begin();
+
+			bigliettoDAO.setEntityManager(entityManager);
+
+			bigliettoDAO.update(input);
+
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
 
 	}
 

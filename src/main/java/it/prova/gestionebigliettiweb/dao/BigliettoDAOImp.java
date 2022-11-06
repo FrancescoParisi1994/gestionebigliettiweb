@@ -24,7 +24,7 @@ public class BigliettoDAOImp implements BigliettoDAO {
 	@Override
 	public void update(Biglietto input) throws Exception {
 		// TODO Auto-generated method stub
-
+		entityManager.merge(input);
 	}
 
 	@Override

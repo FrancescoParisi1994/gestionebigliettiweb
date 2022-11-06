@@ -32,6 +32,7 @@ public class Biglietto {
 
 	// campi per le time info del record
 	@CreationTimestamp
+	@Column(updatable = false)
 	private LocalDateTime createDateTime;
 	@UpdateTimestamp
 	private LocalDateTime updateDateTime;
