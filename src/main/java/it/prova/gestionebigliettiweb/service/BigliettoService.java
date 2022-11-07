@@ -18,4 +18,6 @@ public interface BigliettoService {
 	public void delete(Long id) throws Exception;
 
 	public void setBigliettoDAO(BigliettoDAO bigliettoDAO);
+
+	public List<Biglietto> findByExample(Biglietto biglietto) throws Exception;
 }

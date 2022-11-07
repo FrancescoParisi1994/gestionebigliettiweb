@@ -53,7 +53,7 @@
 				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietti</h1>
 				        <p class="col-md-8 fs-4">Benvenuto<br>Da qui potrai visualizzare e cercare i tuoi biglietti</p>
 				        <a class="btn btn-primary btn-lg" href="ListaBigliettiServlet">Lista Biglietti</a>
-				        <a class="btn btn-primary btn-lg" href="">Cerca Biglietto</a>
+				        <a class="btn btn-primary btn-lg" href="PrepareCercaBigliettoServlet">Cerca Biglietto</a>
 				      </div>
 			    </div>
 			    

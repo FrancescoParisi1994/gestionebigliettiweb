@@ -13,6 +13,22 @@ public class BigliettoServiceImp implements BigliettoService {
 	private BigliettoDAO bigliettoDAO;
 
 	@Override
+	public List<Biglietto> findByExample(Biglietto biglietto) throws Exception {
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+		try {
+			bigliettoDAO.setEntityManager(entityManager);
+
+			return bigliettoDAO.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
+
+	}
+
+	@Override
 	public List<Biglietto> list() throws Exception {
 		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
 		try {

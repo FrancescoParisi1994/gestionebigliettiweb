@@ -38,6 +38,8 @@ public class ExecuteDeleteBigliettoServlet extends HttpServlet {
 
 		try {
 			bigliettoService.delete(Long.parseLong(idString));
+			
+			request.setAttribute("listaBigliettoAttribute", bigliettoService.list());
 		} catch (Exception e) {
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
 			request.getRequestDispatcher("/index.jsp").forward(request, response);

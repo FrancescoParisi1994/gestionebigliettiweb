@@ -7,7 +7,7 @@
 	 	<!-- Common imports in pages -->
 	 	<jsp:include page="../header.jsp" />
 	   
-	   <title>Modifica Elemento</title>
+	   <title>Cerca Elemento</title>
 	 </head>
 	   <body class="d-flex flex-column h-100">
 	   
@@ -34,12 +34,12 @@
 			  
 			  <div class='card'>
 				    <div class='card-header'>
-				        <h5>Modifica biglietto</h5> 
+				        <h5>Cerca biglietto</h5> 
 				    </div>
 				    <div class='card-body'>
 		
-							<form method="post" action="ExecuteUpdateBigliettoServlet" class="row g-3" novalidate="novalidate">
-														
+							<form method="post" action="ExecuteCercaBigliettoServlet" class="row g-3" novalidate="novalidate">
+							
 								<div class="col-md-6">
 									<label for="provenienza" class="form-label">Provenienza:</label>
 									<input type="text" name="provenienza" id="provenienza" class="form-control" placeholder="Inserire la provenienza"  
@@ -55,7 +55,7 @@
 								<div class="col-md-3">
 									<label for="data" class="form-label">Data:</label>
 									<input class="form-control"  name="data" id="data" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
-										value='<fmt:formatDate pattern="yyyy-MM-dd" value="${visualizza_biglietto_attr.data}"/>' required/>
+										value="${visualizza_biglietto_attr.data}" required/>
 								</div>
 								
 								<div class="col-md-6">
@@ -66,7 +66,7 @@
 								
 								
 							<div class="col-12">
-								<button type="submit" name="idArticolo" value="${visualizza_biglietto_attr.id}" id="idArticolo" class="btn btn-primary">Conferma</button>
+								<button type="submit" class="btn btn-primary">Conferma</button>
 								<a class="btn btn-outline-secondary" href="ListaBigliettiServlet">Indietro</a>
 							</div>
 		

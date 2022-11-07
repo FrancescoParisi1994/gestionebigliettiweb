@@ -1,6 +1,6 @@
 <!doctype html>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="it.prova.gestionebigliettiweb.model.Biglietto"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <html lang="it" class="h-100" >
 	 <head>
 	 
@@ -23,35 +23,34 @@
 					    <div class='card-header'>
 					        <h5>Visualizza biglietto</h5>
 					    </div>
-					     <% Biglietto articoloInPagina = (Biglietto)request.getAttribute("visualizza_biglietto_attr"); %>
 					    
 					
 					    <div class='card-body'>
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Provenienza:</dt>
-							  <dd class="col-sm-9"><%=articoloInPagina.getProvenienza() %></dd>
+							  <dd class="col-sm-9">${visualizza_biglietto_attr.provenienza}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Destinazione:</dt>
-							  <dd class="col-sm-9"><%=articoloInPagina.getDestinazione() %></dd>
+							  <dd class="col-sm-9">${visualizza_biglietto_attr.destinazione}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Prezzo:</dt>
-							  <dd class="col-sm-9"><%=articoloInPagina.getPrezzo() %></dd>
+							  <dd class="col-sm-9">${visualizza_biglietto_attr.prezzo}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Data :</dt>
-							  <dd class="col-sm-9"><%=articoloInPagina.getData()!=null? new SimpleDateFormat("dd/MM/yyyy").format(articoloInPagina.getData()):"N.D."  %></dd>
+							  <dd class="col-sm-9"><fmt:formatDate value="${visualizza_biglietto_attr.data}" pattern="dd/MM/yyyy"/></dd>
 					    	</dl>
 					    	
 					    </div>
 					    
 					    <div class='card-footer'>
 								<form action="ExecuteDeleteBigliettoServlet" method="post">
-									<button class='btn btn-primary' value="<%=articoloInPagina.getId() %>" name="idArticolo">Conferma</button>
+									<button class='btn btn-primary' value="${visualizza_biglietto_attr.id}" name="idArticolo">Conferma</button>
 					    			<a href="ListaBigliettiServlet" class='btn btn-outline-secondary' style='width:80px'>
 					            	<i class='fa fa-chevron-left'></i> Back</a>
 					            </form>
