@@ -66,10 +66,10 @@
 				                        <td>${item.prezzo}</td>
 				                        <td><fmt:formatDate value="${item.data}" pattern="dd-MM-yyyy"/></td>
 				                        <td>
-											<a class="btn btn-sm btn-outline-secondary" href="VisualizzaBigliettoServlet?idArticolo=${item.id}">Visualizza</a>
-											<a class="btn btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateBigliettoServlet?idArticolo=${item.id}">Edit</a>
-											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteBigliettoServlet?idArticolo=${item.id}">Delete</a>
-										</td>
+								<a class="btn btn-sm btn-outline-secondary" href="VisualizzaBigliettoServlet?idArticolo=${item.id}">Visualizza</a>
+								<a class="btn btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateBigliettoServlet?idArticolo=${item.id}">Edit</a>
+								<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteBigliettoServlet?idArticolo=${item.id}">Delete</a>
+							</td>
 				                    </tr>
 				                    
 				                   </c:forEach>
